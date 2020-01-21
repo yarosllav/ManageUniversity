@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Univer.Models.Course>
+
+@{
+    ViewBag.Title = "University";
+}
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Университет</title>
+</head>
+<h2>Courses</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Specialization)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in ViewBag.Courses)
+    {
+        <tr>
+            <td><p>@item.Specialization</p></td>
+            <td>
+                <a href="/Group/ShowGroups?id=@item.CourseId">Groups on the current courses</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
